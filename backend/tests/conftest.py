@@ -1,3 +1,5 @@
+from datetime import date, timedelta
+
 import pandas as pd
 import pytest
 
@@ -13,6 +15,6 @@ def valid_risk_dataframe():
             "Treatment": ["Implement MFA"],
             "Likelihood": [4],
             "Impact": [5],
-            "Review Date": ["2027-01-01"],
+            "Review Date": [(date.today() + timedelta(days=30)).isoformat()],
         }
     )
